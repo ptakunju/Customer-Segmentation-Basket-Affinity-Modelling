@@ -21,9 +21,7 @@ These techniques together help in understanding customer behavior and tailoring 
   - [K-Means Clustering](#k-means-clustering)
   - [Basket Affinity Modeling](#basket-affinity-modeling)
 - [How to Run the Notebook](#how-to-run-the-notebook)
-- [Figures](#figures)
-- [References](#references)
-
+  
 ---
 
 ## Project Overview
