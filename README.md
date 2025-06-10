@@ -1,6 +1,37 @@
 # Customer Segmentation and Basket Affinity Modelling
 
-This notebook performs an analysis on customer transaction data to achieve two main goals: customer segmentation and basket affinity modelling. Customer segmentation is performed using RFM (Recency, Frequency, Monetary) analysis followed by K-Means clustering to group customers based on their purchasing behavior. Basket affinity modelling uses the Apriori algorithm to discover association rules between items frequently bought together, which can inform product placement, promotions, and recommendations.
+This project explores customer transaction data to derive actionable business insights through two key analytics tasks:
+
+1. **Customer Segmentation** using RFM (Recency, Frequency, Monetary) analysis combined with K-Means clustering to group customers based on their purchasing behavior
+2. **Basket Affinity Modeling** using the Apriori algorithm to discover association rules between items frequently bought together, which can inform product placement, promotions, and recommendations
+
+These techniques together help in understanding customer behavior and tailoring product recommendations, promotions, and store layouts accordingly.
+
+
+---
+
+## 📑 Table of Contents
+
+- [Project Overview](#project-overview)
+- [Notebook Structure](#notebook-structure)
+- [Key Steps and Findings](#key-steps-and-findings)
+  - [Data Processing](#data-processing)
+  - [RFM Analysis](#rfm-analysis)
+  - [Principal Component Analysis (PCA)](#principal-component-analysis-pca)
+  - [K-Means Clustering](#k-means-clustering)
+  - [Basket Affinity Modeling](#basket-affinity-modeling)
+- [How to Run the Notebook](#how-to-run-the-notebook)
+- [Figures](#figures)
+- [References](#references)
+
+---
+
+## 📘 Project Overview
+
+The aim of this analysis is to transform raw retail transaction data into meaningful segments and associations. By segmenting customers based on purchase behavior and uncovering which items are frequently purchased together, businesses can target promotions, optimize inventory, and personalize marketing strategies.
+
+---
+
 
 ## Notebook Structure
 
@@ -34,11 +65,15 @@ These three metrics were combined into a single DataFrame `rfm`.
 - **Explained Variance**: The explained variance ratio showed that PC1 captures the majority of the variance in the RFM data, and PC2 captures a significant portion of the remaining variance. This indicates that the two components effectively represent the underlying patterns in the RFM metrics.
 - **Feature Contributions**: The PCA weights revealed how much each original RFM feature (Recency, Frequency, Monetary) contributes to the principal components. For instance, PC1 is heavily influenced by Frequency and Monetary values (both with positive weights), while PC2 is strongly related to Recency (with a positive weight).
 
+
+
 ### K-Means Clustering
 
 - **Optimal K**: The Elbow method (plotting Inertia vs. K) and Silhouette scores were used to determine the optimal number of clusters. Based on the Silhouette scores, K=5 was selected as the best number of clusters for the dataset, as it yielded the highest score among the evaluated range.
 - **Model Fitting and Visualization**: A K-Means model with 5 clusters was fitted to the scaled RFM data (or PCA-transformed data). Cluster labels were assigned to the `rfm` and `pca_df` DataFrames. The clusters were visualized on the PCA-transformed data, showing visually distinct groupings of customers.
 - **Cluster Profiling**: The mean RFM values were calculated for each cluster (`cluster_profile`). This analysis helps to understand the characteristics of each segment. For example, clusters with low Recency and high Frequency/Monetary values represent recent, frequent, and high-spending customers (likely the most valuable segment), while clusters with high Recency and low Frequency/Monetary values represent dormant or low-value customers.
+
+
 
 - ### Basket Affinity Modelling
 
@@ -47,6 +82,10 @@ These three metrics were combined into a single DataFrame `rfm`.
 - **Association Rules**: Association rules were generated from the frequent itemsets using a `min_threshold` of 0.1 for the `confidence` metric. The `lift` metric was used to evaluate the strength and relevance of the rules. Rules with a lift greater than 1 indicate that the items in the consequent are more likely to be bought when the items in the antecedent are also bought, compared to their individual probabilities.
 - **Rule Interpretation**: The scatter plot of confidence vs. lift visualizes the trade-off between these two metrics and the support of the rules. The heatmap of the top rules sorted by lift provides a clear visual representation of the strongest associations between specific item sets. For instance, a high lift value between "sausage" and "yogurt" suggests that customers buying sausage are significantly more likely to also buy yogurt.
 - **Interactive Consequent Finder**: An interactive widget was created to allow users to select one or more items and find the associated items (consequents) based on the generated rules, along with their support, confidence, and lift values.
+
+
+
+
 
 ## How to Run the Notebook
 
