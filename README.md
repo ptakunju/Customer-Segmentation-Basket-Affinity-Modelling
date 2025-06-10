@@ -76,7 +76,7 @@ Customers are projected onto the 2D PCA space and colored by their cluster label
 ![Customer Clusters on PCA](./figures/pca_clusters.jpg)
 
 
-- ### Basket Affinity Modelling
+### Basket Affinity Modelling
 
 - **Data Transformation**: The transaction data (customer number, date, and item description) was transformed into a one-hot encoded format where each row represents a transaction (customer and date combination) and each column represents a unique item, indicating whether that item was present in the transaction.
 - **Frequent Itemsets**: The Apriori algorithm was applied to the encoded transaction data with a `min_support` of 0.001 to find items or sets of items that frequently appear together in transactions.
