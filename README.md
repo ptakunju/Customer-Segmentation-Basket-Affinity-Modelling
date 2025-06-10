@@ -83,14 +83,20 @@ Customers are projected onto the 2D PCA space and colored by their cluster label
 - **Data Transformation**: The transaction data (customer number, date, and item description) was transformed into a one-hot encoded format where each row represents a transaction (customer and date combination) and each column represents a unique item, indicating whether that item was present in the transaction.
 - **Frequent Itemsets**: The Apriori algorithm was applied to the encoded transaction data with a `min_support` of 0.001 to find items or sets of items that frequently appear together in transactions.
 - **Association Rules**: Association rules were generated from the frequent itemsets using a `min_threshold` of 0.1 for the `confidence` metric. The `lift` metric was used to evaluate the strength and relevance of the rules. Rules with a lift greater than 1 indicate that the items in the consequent are more likely to be bought when the items in the antecedent are also bought, compared to their individual probabilities.
-- **Rule Interpretation**: The scatter plot of confidence vs. lift visualizes the trade-off between these two metrics and the support of the rules. The heatmap of the top rules sorted by lift provides a clear visual representation of the strongest associations between specific item sets. For instance, a high lift value between "sausage" and "yogurt" suggests that customers buying sausage are significantly more likely to also buy yogurt.
+- **Rule Interpretation**: The scatter plot of confidence vs. lift visualizes the trade-off between these two metrics and the support of the rules.
+
+  ![Confidence vs Lift](./figures/confidence_vs_lift.jpg)
+
+  The heatmap of the top rules sorted by lift provides a clear visual representation of the strongest associations between specific item sets. For instance, a high lift value between "sausage" and "yogurt" suggests that customers buying sausage are significantly more likely to also buy yogurt.
+  ![lift_heatmap](./figures/lift_heatmap.jpg)
+  
 - **Interactive Consequent Finder**: An interactive widget was created to allow users to select one or more items and find the associated items (consequents) based on the generated rules, along with their support, confidence, and lift values.
 
 This network graph shows items frequently bought together, based on association rules with lift greater than 1. Arrows point from antecedent to consequent items.
 ![Association Rules Network](./figures/association_rules_network.jpg)
 
 This scatter plot shows each rule plotted by its confidence and lift scores, with point sizes indicating support. It's useful for identifying high-quality rules.
-![Confidence vs Lift](./figures/confidence_vs_lift.jpg)
+
 
 
 ## How to Run the Notebook
