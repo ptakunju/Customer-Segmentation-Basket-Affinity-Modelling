@@ -26,7 +26,7 @@ These techniques together help in understanding customer behavior and tailoring 
 
 ---
 
-## Project Overview
+## Project Overview (# customer-segmentation-and-basket-affinity-modelling)
 
 The aim of this analysis is to transform raw retail transaction data into meaningful segments and associations. By segmenting customers based on purchase behavior and uncovering which items are frequently purchased together, businesses can target promotions, optimize inventory, and personalize marketing strategies.
 
