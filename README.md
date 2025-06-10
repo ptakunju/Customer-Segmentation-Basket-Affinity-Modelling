@@ -65,7 +65,8 @@ These three metrics were combined into a single DataFrame `rfm`.
 - **Explained Variance**: The explained variance ratio showed that PC1 captures the majority of the variance in the RFM data, and PC2 captures a significant portion of the remaining variance. This indicates that the two components effectively represent the underlying patterns in the RFM metrics.
 - **Feature Contributions**: The PCA weights revealed how much each original RFM feature (Recency, Frequency, Monetary) contributes to the principal components. For instance, PC1 is heavily influenced by Frequency and Monetary values (both with positive weights), while PC2 is strongly related to Recency (with a positive weight).
 
-
+This figure illustrates how the original RFM features contribute to the two principal components. It helps interpret which features dominate each component.
+![PCA Component Weights](./figures/pca_loadings.jpg)
 
 ### K-Means Clustering
 
@@ -73,6 +74,8 @@ These three metrics were combined into a single DataFrame `rfm`.
 - **Model Fitting and Visualization**: A K-Means model with 5 clusters was fitted to the scaled RFM data (or PCA-transformed data). Cluster labels were assigned to the `rfm` and `pca_df` DataFrames. The clusters were visualized on the PCA-transformed data, showing visually distinct groupings of customers.
 - **Cluster Profiling**: The mean RFM values were calculated for each cluster (`cluster_profile`). This analysis helps to understand the characteristics of each segment. For example, clusters with low Recency and high Frequency/Monetary values represent recent, frequent, and high-spending customers (likely the most valuable segment), while clusters with high Recency and low Frequency/Monetary values represent dormant or low-value customers.
 
+Customers are projected onto the 2D PCA space and colored by their cluster label. This provides a clear view of how K-Means separated customer behavior patterns.
+![Customer Clusters on PCA](./figures/pca_clusters.jpg)
 
 
 - ### Basket Affinity Modelling
@@ -83,8 +86,11 @@ These three metrics were combined into a single DataFrame `rfm`.
 - **Rule Interpretation**: The scatter plot of confidence vs. lift visualizes the trade-off between these two metrics and the support of the rules. The heatmap of the top rules sorted by lift provides a clear visual representation of the strongest associations between specific item sets. For instance, a high lift value between "sausage" and "yogurt" suggests that customers buying sausage are significantly more likely to also buy yogurt.
 - **Interactive Consequent Finder**: An interactive widget was created to allow users to select one or more items and find the associated items (consequents) based on the generated rules, along with their support, confidence, and lift values.
 
+This network graph shows items frequently bought together, based on association rules with lift greater than 1. Arrows point from antecedent to consequent items.
+![Association Rules Network](./figures/association_rules_network.jpg)
 
-
+This scatter plot shows each rule plotted by its confidence and lift scores, with point sizes indicating support. It's useful for identifying high-quality rules.
+![Confidence vs Lift](./figures/confidence_vs_lift.jpg)
 
 
 ## How to Run the Notebook
