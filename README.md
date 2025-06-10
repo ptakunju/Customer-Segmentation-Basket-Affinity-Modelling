@@ -19,7 +19,7 @@ These techniques together help in understanding customer behavior and tailoring 
   - [RFM Analysis](#rfm-analysis)
   - [Principal Component Analysis (PCA)](#principal-component-analysis-pca)
   - [K-Means Clustering](#k-means-clustering)
-  - [Basket Affinity Modeling](#basket-affinity-modeling)
+  - [Basket Affinity Modeling](#basket-affinity-modelling)
 - [How to Run the Notebook](#how-to-run-the-notebook)
   
 ---
