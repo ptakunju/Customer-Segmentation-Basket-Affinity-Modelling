@@ -92,18 +92,5 @@ Customers are projected onto the 2D PCA space and colored by their cluster label
   The heatmap of the top rules sorted by lift provides a clear visual representation of the strongest associations between specific item sets. For instance, a high lift value between "sausage" and "yogurt" suggests that customers buying sausage are significantly more likely to also buy yogurt.
   ![lift_heatmap](./figures/lift_heatmap.jpg)
   
-- **Interactive Consequent Finder**: An interactive widget was created to allow users to select one or more items and find the associated items (consequents) based on the generated rules, along with their support, confidence, and lift values.
-
-
-## How to Run the Notebook
-
-1.  **Obtain the Data**: The dataset is available on Kaggle. The notebook uses the `kagglehub` library to download the dataset directly. Ensure you have a Kaggle account and the necessary credentials configured for `kagglehub` to work. The data file used is `Groceries data.csv`.
-
-2.  **Install Dependencies**: The notebook requires the following Python libraries. You can install them using pip:
-    ```bash
-    pip install pandas numpy matplotlib scikit-learn mlxtend kagglehub seaborn ipywidgets networkx
-    ```
-
-3.  **Execute the Notebook**: You can run this notebook using Jupyter Notebook or JupyterLab. Simply open the `.ipynb` file in either environment and run the cells sequentially.
-
+- **Interactive Consequent Finder**: An interactive widget was created to allow users to select one or more items and find the associated items (consequents) based on the generated rules, along with their support, confidence, and lift values.q
 
