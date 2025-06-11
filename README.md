@@ -7,6 +7,7 @@ This project explores customer transaction data to derive actionable business in
 
 These techniques together help in understanding customer behavior and tailoring product recommendations, promotions, and store layouts accordingly.
 
+This project uses the Groceries Dataset for Market Basket Analysis from Kaggle. It contains anonymized retail transaction data, where each row represents an item bought by a customer on a specific date. The dataset is ideal for performing RFM-based customer segmentation and discovering item associations using algorithms like Apriori. The dataset can be located at: [Groceries dataset for Market Basket Analysis(MBA)](https://www.kaggle.com/datasets/rashikrahmanpritom/groceries-dataset-for-market-basket-analysismba)
 
 ---
 
